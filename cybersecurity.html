@@ -3,71 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Киберқауіпсіздік</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Киберқауіпсіздік - Банк Жүйесі</title>
+    <link rel="stylesheet" href="style.css"> <!-- Твой основной файл стилей -->
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .content-section {
+            margin-bottom: 20px;
+        }
+        .content-section h2 {
+            color: #dc3545; /* Красный для акцента на опасности */
+            border-bottom: 2px solid #dc3545;
+            padding-bottom: 5px;
+        }
+        .content-section ul {
+            list-style-type: square; /* Другой маркер списка */
+            margin-left: 20px;
+        }
+        .tip {
+            background-color: #fff3cd; /* Желтоватый для подсказок */
+            border-left: 5px solid #ffc107; /* Желтая рамка слева */
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        .password-checker {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .password-checker input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .password-checker button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #passwordStrength {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        /* Навигация (если будешь копировать свою) */
+        header nav ul { list-style: none; padding: 0; display: flex; background-color: #333; }
+        header nav ul li { margin-right: 10px; }
+        header nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
+        header nav ul li a:hover { background-color: #555; }
+    </style>
 </head>
 <body>
+
     <header>
+        <!-- СКОПИРУЙ СЮДА СВОЮ НАВИГАЦИОННУЮ ПАНЕЛЬ (ШАПКУ САЙТА) -->
+        <!-- Пример простой навигации: -->
         <nav>
-            <!-- index.html-дағы nav мазмұнын көшіріп қойыңыз -->
             <ul>
                 <li><a href="index.html">Басты бет</a></li>
-                <li><a href="digitalization-basics.html">Цифрландыру негіздері</a></li>
-                <li><a href="kazakhstan-stages.html">Қазақстандағы кезеңдер</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Негізгі трендтер</a>
-                    <div class="dropdown-content">
-                        <a href="open-api.html">Open API & Open Banking</a>
-                        <a href="ai-blockchain.html">AI & Blockchain</a>
-                        <a href="digital-tenge.html">Цифрлық теңге</a>
-                        <a href="cybersecurity.html">Киберқауіпсіздік</a>
-                    </div>
-                </li>
-                <li><a href="international-experience.html">Халықаралық тәжірибе</a></li>
-                <li><a href="recommendations.html">Ұсыныстар</a></li>
-                <li><a href="about-project.html">Жоба туралы</a></li>
+                <li><a href="open-api.html">Open API</a></li>
+                <li><a href="ai-blockchain.html">AI & Blockchain</a></li>
+                <li><a href="digital-tenge.html">Цифрлық теңге</a></li>
+                <li><a href="cybersecurity.html" style="background-color: #555;">Киберқауіпсіздік</a></li>
+                <li><a href="demo-banking.html">Онлайн-Банкинг Демо</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h1>Цифрландыру жағдайындағы киберқауіпсіздік</h1>
-            <p>Цифрлық технологиялардың дамуымен қатар киберқауіптер де артып келеді. Банктер клиенттердің деректері мен қаражаттарын қорғау үшін кешенді шаралар қабылдауы тиіс.</p>
 
-            <h2>Негізгі қауіптер (2.5-бөлімнен):</h2>
+    <div class="container">
+        <h1>Банк ісіндегі киберқауіпсіздік</h1>
+
+        <div class="content-section">
+            <h2>Неліктен киберқауіпсіздік маңызды?</h2>
+            <p>Банктер үлкен көлемдегі қаржылық ақпаратты және клиенттердің жеке деректерін сақтайды, бұл оларды киберқылмыскерлер үшін тартымды нысанаға айналдырады. Сәтсіз кибератакалар қаржылық шығындарға, беделдің жоғалуына және клиенттердің сенімінен айырылуына әкелуі мүмкін.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Жиі кездесетін киберқауіптер</h2>
             <ul>
-                <li><strong>DeepFake технологиясы:</strong> Суреттерді, бейнелерді немесе аудиофайлдарды қолдан жасау арқылы алаяқтық.</li>
-                <li><strong>Жалған мобильді қосымшалар:</strong> Банктердің ресми қосымшаларын еліктеп, деректерді ұрлау.</li>
-                <li><strong>Фишинг және әлеуметтік инженерия.</strong></li>
-                <li><strong>Open API-ге шабуылдар.</strong></li>
+                <li><strong>Фишинг:</strong> Алдамшы электрондық хаттар немесе веб-сайттар арқылы құпия ақпаратты (логиндер, парольдер, карта деректері) ұрлау.</li>
+                <li><strong>Зиянды бағдарламалар (Malware):</strong> Компьютерлік жүйелерге зиян келтіруге немесе ақпарат ұрлауға арналған вирустар, трояндар, бопсалаушы бағдарламалар.</li>
+                <li><strong>Әлеуметтік инженерия:</strong> Адамдарды алдау арқылы құпия ақпаратты алу немесе белгілі бір әрекеттерді жасату.</li>
+                <li><strong>DDoS-шабуылдар:</strong> Веб-сайтты немесе онлайн-қызметті көптеген жалған сұраныстармен жүктеп, оның жұмысын тоқтату.</li>
             </ul>
+        </div>
 
-            <h2>Қазақстандағы Алаяқтыққа қарсы орталық</h2>
-            <p>Ұлттық Банк 2024 жылы «Алаяқтыққа қарсы орталық» қызметін іске қосты. Мақсаты - қаржы нарығы субъектілері мен құқық қорғау органдары арасында алаяқтық белгілері бар төлем операциялары бойынша деректермен жедел алмасу.</p>
-            <img src="images/anti-fraud-center-diagram.png" alt="Алаяқтыққа қарсы орталық схемасы" style="width:100%; max-width:600px; margin:15px 0;">
-            <p><em>(Диаграммада орталықтың банктермен, ІІМ-мен, ҰҚК МТҚ-мен және басқа да қатысушылармен өзара әрекеттесуі көрсетілуі мүмкін)</em></p>
-            
-            <h2>Алаяқтық схемалары (Демо)</h2>
-            <div class="fraud-scheme">
-                <h3 class="toggle-fraud">Жалған қоңырау (банк қызметкері атынан) <span class="arrow">▼</span></h3>
-                <div class="fraud-details">
-                    <p><strong>Сипаттамасы:</strong> Алаяқтар банк қызметкері немесе қауіпсіздік қызметінің өкілі болып қоңырау шалып, шотта күмәнді операциялар байқалғанын айтып, карта деректерін, SMS-кодты немесе жеке кабинетке кіру логині мен паролін сұрайды.</p>
-                    <p><strong>Қорғану жолы:</strong> Ешқашан телефон арқылы карта деректерін, CVC/CVV кодын, SMS-кодты, логин мен парольді айтпаңыз. Күмәнді қоңырау түссе, тұтқаны қойып, банктің ресми нөміріне өзіңіз хабарласыңыз.</p>
-                </div>
+        <div class="content-section">
+            <h2>Өзіңізді қалай қорғауға болады? (Клиенттер үшін кеңестер)</h2>
+            <div class="tip">
+                <strong>Күшті құпия сөздерді пайдаланыңыз:</strong> Әр түрлі сайттар үшін әртүрлі, күрделі (үлкен және кіші әріптер, сандар, таңбалар) құпия сөздерді қолданыңыз.
             </div>
-             <div class="fraud-scheme">
-                <h3 class="toggle-fraud">Жалған мобильді қосымша <span class="arrow">▼</span></h3>
-                <div class="fraud-details">
-                    <p><strong>Сипаттамасы:</strong> Алаяқтар танымал банктердің мобильді қосымшаларына ұқсас жалған қосымшалар жасайды. Олар SMS, мессенджерлер немесе жарнама арқылы таратылуы мүмкін. Қолданушы мұндай қосымшаға өз деректерін енгізгенде, олар алаяқтардың қолына түседі.</p>
-                    <p><strong>Қорғану жолы:</strong> Мобильді қосымшаларды тек ресми дүкендерден (App Store, Google Play) жүктеңіз. Әзірлеушінің атауына және пікірлерге назар аударыңыз.</p>
-                </div>
+            <div class="tip">
+                <strong>Екі факторлы аутентификацияны (2FA) қосыңыз:</strong> Бұл сіздің аккаунтыңызға қосымша қорғаныс қабатын қосады.
             </div>
+            <div class="tip">
+                <strong>Күмәнді сілтемелер мен файлдарды ашпаңыз:</strong> Таныс емес жіберушілерден келген электрондық хаттардағы немесе хабарламалардағы сілтемелерге сақ болыңыз.
+            </div>
+            <div class="tip">
+                <strong>Бағдарламалық жасақтаманы жаңартып отырыңыз:</strong> Операциялық жүйеңізді, браузеріңізді және антивирустық бағдарламаңызды үнемі жаңартыңыз.
+            </div>
+            <div class="tip">
+                <strong>Қоғамдық Wi-Fi желілерін абайлап пайдаланыңыз:</strong> Қоғамдық желілер арқылы маңызды қаржылық операцияларды жасамаңыз немесе VPN қолданыңыз.
+            </div>
+        </div>
 
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Нұрсұлу. Дипломдық жұмыс материалдары.</p>
-    </footer>
-    <script src="script.js"></script>
+        <div class="content-section password-checker">
+            <h3>Құпия сөздің күштілігін тексеру (қарапайым мысал)</h3>
+            <input type="text" id="passwordInput" placeholder="Құпия сөзіңізді енгізіңіз">
+            <button onclick="checkPasswordStrength()">Тексеру</button>
+            <div id="passwordStrength"></div>
+        </div>
+    </div>
+
+    <script>
+        function showScenario(scenarioId) { // Эта функция может быть нужна, если ты скопируешь из digital-tenge
+            const scenarioInfo = document.getElementById(scenarioId);
+            if (scenarioInfo) {
+                scenarioInfo.style.display = scenarioInfo.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+
+        function checkPasswordStrength() {
+            const password = document.getElementById('passwordInput').value;
+            const strengthIndicator = document.getElementById('passwordStrength');
+            let strength = 0;
+            let message = "";
+
+            if (password.length >= 8) strength++;
+            if (password.length >= 12) strength++;
+            if (/[A-Z]/.test(password)) strength++; // Үлкен әріп
+            if (/[a-z]/.test(password)) strength++; // Кіші әріп
+            if (/[0-9]/.test(password)) strength++; // Сан
+            if (/[^A-Za-z0-9]/.test(password)) strength++; // Арнайы таңба
+
+            if (strength < 2) {
+                message = "Өте әлсіз";
+                strengthIndicator.style.color = "red";
+            } else if (strength < 4) {
+                message = "Әлсіз";
+                strengthIndicator.style.color = "orange";
+            } else if (strength < 6) {
+                message = "Орташа";
+                strengthIndicator.style.color = "blue";
+            } else {
+                message = "Күшті";
+                strengthIndicator.style.color = "green";
+            }
+            strengthIndicator.textContent = `Құпия сөздің күштілігі: ${message}`;
+        }
+    </script>
+
 </body>
 </html>
