@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="kk"> <!-- или ru, в зависимости от языка страницы -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Blockchain - Банк Жүйесі</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Возможно, у тебя есть другие CSS файлы или favicon, добавь их сюда -->
+</head>
+<body>
+    <header>
+        <!-- Сюда скопируй всю твою навигационную панель (шапку сайта) -->
+        <!-- Например, если она в <nav>...</nav> или <div class="navbar">...</div> -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="open-api.html">Open API & Open Banking</a></li>
+                <!-- ... и так далее, все твои пункты меню -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Негізгі трендтер</a>
+                    <div class="dropdown-content">
+                        <a href="open-api-open-banking.html">Open API & Open Banking</a> <!-- Уточни имя этого файла -->
+                        <a href="ai-blockchain.html">AI & Blockchain</a>
+                        <a href="digital-tenge.html">Цифрлық теңге</a>
+                        <a href="cybersecurity.html">Киберқауіпсіздік</a>
+                    </div>
+                </li>
+                 <!-- ... другие пункты меню -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>AI (Жасанды интеллект) және Блокчейн</h1>
+        <p>Бұл бетте жасанды интеллект пен блокчейн технологияларының банк ісіндегі рөлі туралы ақпарат болады.</p>
+
+        <!-- Сюда ты можешь добавить демонстрацию процесса -->
+        <section id="banking-demo">
+            <h2>Онлайн-банкинг процесінің демонстрациясы (мысал)</h2>
+            <p>Төменде қарапайым онлайн-банкинг операциясының үлгісі келтірілген.</p>
+
+            <div>
+                <h3>Кіру (Логин)</h3>
+                <form id="loginFormDemo">
+                    <label for="username">Пайдаланушы аты:</label><br>
+                    <input type="text" id="username" name="username" value="testuser"><br>
+                    <label for="password">Құпия сөз:</label><br>
+                    <input type="password" id="password" name="password" value="password123"><br><br>
+                    <button type="button" onclick="simulateLogin()">Кіру</button>
+                </form>
+                <p id="loginStatus"></p>
+            </div>
+
+            <div id="accountActions" style="display:none;">
+                <h3>Аккаунт әрекеттері</h3>
+                <p>Баланс: <span id="balance">1000</span> KZT</p>
+                <label for="transferAmount">Аударым сомасы:</label>
+                <input type="number" id="transferAmount" min="1" value="50">
+                <button type="button" onclick="simulateTransfer()">Аудару</button>
+                <p id="transferStatus"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Твой футер (если есть) -->
+        <p>© 2023 Max Orynbassar Banking System</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript для демонстрации (можно вынести в script.js)
+        function simulateLogin() {
+            const username = document.getElementById('username').value;
+            const statusP = document.getElementById('loginStatus');
+            if (username === "testuser") { // Упрощенная проверка
+                statusP.textContent = "Сәтті кірдіңіз!";
+                statusP.style.color = "green";
+                document.getElementById('accountActions').style.display = 'block';
+            } else {
+                statusP.textContent = "Қате логин немесе құпия сөз.";
+                statusP.style.color = "red";
+                document.getElementById('accountActions').style.display = 'none';
+            }
+        }
+
+        function simulateTransfer() {
+            const amount = parseInt(document.getElementById('transferAmount').value);
+            let balance = parseInt(document.getElementById('balance').textContent);
+            const statusP = document.getElementById('transferStatus');
+
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                document.getElementById('balance').textContent = balance;
+                statusP.textContent = amount + " KZT сәтті аударылды. Жаңа баланс: " + balance + " KZT.";
+                statusP.style.color = "green";
+            } else if (amount > balance) {
+                statusP.textContent = "Баланста қаражат жеткіліксіз.";
+                statusP.style.color = "red";
+            } else {
+                statusP.textContent = "Аударым сомасы дұрыс емес.";
+                statusP.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
