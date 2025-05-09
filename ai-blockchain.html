@@ -1,107 +1,149 @@
 <!DOCTYPE html>
-<html lang="kk"> <!-- или ru, в зависимости от языка страницы -->
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI & Blockchain - Банк Жүйесі</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Возможно, у тебя есть другие CSS файлы или favicon, добавь их сюда -->
+    <link rel="stylesheet" href="style.css"> <!-- Твой основной файл стилей -->
+    <style>
+        body { font-family: sans-serif; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 8px; }
+        .content-section h2 { color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; }
+        .content-section ul { list-style-type: circle; margin-left: 20px; }
+        .ai-demo {
+            background-color: #eef7ff; /* Светло-голубой фон */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border: 1px solid #b8d6f3;
+        }
+        .ai-demo h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .ai-demo textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            min-height: 80px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+        .ai-demo button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .ai-demo button:hover {
+            background-color: #0056b3;
+        }
+        #aiResponse {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            min-height: 50px;
+            white-space: pre-wrap; /* Для сохранения переносов строк в ответе */
+        }
+        /* Навигация (если будешь копировать свою) */
+        header nav ul { list-style: none; padding: 0; display: flex; background-color: #333; }
+        header nav ul li { margin-right: 10px; }
+        header nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
+        header nav ul li a:hover { background-color: #555; }
+    </style>
 </head>
 <body>
+
     <header>
-        <!-- Сюда скопируй всю твою навигационную панель (шапку сайта) -->
-        <!-- Например, если она в <nav>...</nav> или <div class="navbar">...</div> -->
+        <!-- СКОПИРУЙ СЮДА СВОЮ НАВИГАЦИОННУЮ ПАНЕЛЬ (ШАПКУ САЙТА) -->
+        <!-- Обнови ее, чтобы включить эту страницу и другие -->
         <nav>
             <ul>
                 <li><a href="index.html">Басты бет</a></li>
-                <li><a href="open-api.html">Open API & Open Banking</a></li>
-                <!-- ... и так далее, все твои пункты меню -->
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Негізгі трендтер</a>
-                    <div class="dropdown-content">
-                        <a href="open-api-open-banking.html">Open API & Open Banking</a> <!-- Уточни имя этого файла -->
-                        <a href="ai-blockchain.html">AI & Blockchain</a>
-                        <a href="digital-tenge.html">Цифрлық теңге</a>
-                        <a href="cybersecurity.html">Киберқауіпсіздік</a>
-                    </div>
-                </li>
-                 <!-- ... другие пункты меню -->
+                <li><a href="open-api.html">Open API</a></li>
+                <li><a href="ai-blockchain.html" style="background-color: #555;">AI & Blockchain</a></li>
+                <li><a href="digital-tenge.html">Цифрлық теңге</a></li>
+                <li><a href="cybersecurity.html">Киберқауіпсіздік</a></li>
+                <li><a href="international-experience.html">Халықаралық тәжірибе</a></li>
+                <li><a href="recommendations.html">Ұсыныстар</a></li>
+                <li><a href="about-project.html">Жоба туралы</a></li>
+                <li><a href="demo-banking.html">Онлайн-Банкинг Демо</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>AI (Жасанды интеллект) және Блокчейн</h1>
-        <p>Бұл бетте жасанды интеллект пен блокчейн технологияларының банк ісіндегі рөлі туралы ақпарат болады.</p>
+    <div class="container">
+        <h1>Жасанды интеллект (AI) және Блокчейн банк ісінде</h1>
 
-        <!-- Сюда ты можешь добавить демонстрацию процесса -->
-        <section id="banking-demo">
-            <h2>Онлайн-банкинг процесінің демонстрациясы (мысал)</h2>
-            <p>Төменде қарапайым онлайн-банкинг операциясының үлгісі келтірілген.</p>
+        <div class="content-section">
+            <h2>Жасанды интеллект (AI) банк саласында</h2>
+            <p>Жасанды интеллект банктерге клиенттерге қызмет көрсету сапасын жақсартуға, операциялық тиімділікті арттыруға және тәуекелдерді басқаруға көмектеседі. AI қолданудың негізгі бағыттары:</p>
+            <ul>
+                <li><strong>Клиенттерге қызмет көрсету:</strong> Чат-боттар мен виртуалды көмекшілер арқылы клиенттердің сұраныстарына жедел жауап беру.</li>
+                <li><strong>Несиелік скоринг:</strong> Клиенттердің несиелік қабілетін дәлірек бағалау.</li>
+                <li><strong>Алаяқтықты анықтау:</strong> Күмәнді транзакцияларды нақты уақыт режимінде анықтау.</li>
+                <li><strong>Персоналдандырылған ұсыныстар:</strong> Клиенттердің мінез-құлқына негізделген жеке қаржылық өнімдер мен қызметтерді ұсыну.</li>
+                <li><strong>Нарықты талдау және болжау:</strong> Қаржы нарықтарындағы трендтерді талдау.</li>
+            </ul>
+        </div>
 
-            <div>
-                <h3>Кіру (Логин)</h3>
-                <form id="loginFormDemo">
-                    <label for="username">Пайдаланушы аты:</label><br>
-                    <input type="text" id="username" name="username" value="testuser"><br>
-                    <label for="password">Құпия сөз:</label><br>
-                    <input type="password" id="password" name="password" value="password123"><br><br>
-                    <button type="button" onclick="simulateLogin()">Кіру</button>
-                </form>
-                <p id="loginStatus"></p>
-            </div>
+        <div class="ai-demo">
+            <h3>AI Қаржылық Көмекшісі (Демо)</h3>
+            <p>Төмендегі өріске қаржыға немесе банк қызметтеріне қатысты сұрағыңызды жазып, AI-дан кеңес алыңыз (бұл имитация). Мысалы: "депозит ашу", "несие шарттары", "инвестиция қалай бастау керек".</p>
+            <textarea id="userInputAI" placeholder="Сұрағыңызды осында жазыңыз..."></textarea>
+            <button onclick="getAIResponse()">AI-дан жауап алу</button>
+            <h4>AI жауабы:</h4>
+            <div id="aiResponse">Нәтиже осында көрсетіледі...</div>
+        </div>
 
-            <div id="accountActions" style="display:none;">
-                <h3>Аккаунт әрекеттері</h3>
-                <p>Баланс: <span id="balance">1000</span> KZT</p>
-                <label for="transferAmount">Аударым сомасы:</label>
-                <input type="number" id="transferAmount" min="1" value="50">
-                <button type="button" onclick="simulateTransfer()">Аудару</button>
-                <p id="transferStatus"></p>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <!-- Твой футер (если есть) -->
-        <p>© 2023 Max Orynbassar Banking System</p>
-    </footer>
+        <div class="content-section" style="margin-top: 30px;">
+            <h2>Блокчейн банк саласында</h2>
+            <p>Блокчейн технологиясы транзакциялардың қауіпсіздігін, ашықтығын және тиімділігін арттыруға мүмкіндік береді. Блокчейнді қолданудың ықтимал бағыттары:</p>
+            <ul>
+                <li><strong>Трансшекаралық төлемдер:</strong> Халықаралық ақша аударымдарын жылдамдату және арзандату.</li>
+                <li><strong>Сауданы қаржыландыру:</strong> Сауда операцияларында құжат айналымын оңтайландыру.</li>
+                <li><strong>Жеке басты сәйкестендіру (KYC/AML):</strong> Клиенттерді тексеру процестерін жеңілдету.</li>
+                <li><strong>Смарт-контракттар:</strong> Келісімшарттардың автоматты түрде орындалуын қамтамасыз ету.</li>
+                <li><strong>Бағалы қағаздармен операциялар:</strong> Бағалы қағаздарды шығару және сату процестерін жеңілдету.</li>
+            </ul>
+        </div>
+        <p><em>AI және блокчейн технологиялары банк секторын трансформациялауда маңызды рөл атқарады, бірақ оларды енгізу мұқият жоспарлауды және ықтимал тәуекелдерді ескеруді қажет етеді.</em></p>
+    </div>
 
-    <script src="script.js"></script>
     <script>
-        // JavaScript для демонстрации (можно вынести в script.js)
-        function simulateLogin() {
-            const username = document.getElementById('username').value;
-            const statusP = document.getElementById('loginStatus');
-            if (username === "testuser") { // Упрощенная проверка
-                statusP.textContent = "Сәтті кірдіңіз!";
-                statusP.style.color = "green";
-                document.getElementById('accountActions').style.display = 'block';
-            } else {
-                statusP.textContent = "Қате логин немесе құпия сөз.";
-                statusP.style.color = "red";
-                document.getElementById('accountActions').style.display = 'none';
-            }
-        }
+        function getAIResponse() {
+            const userInput = document.getElementById('userInputAI').value.toLowerCase().trim();
+            const responseElement = document.getElementById('aiResponse');
+            let aiTextResponse = "Кешіріңіз, сұранысыңызды түсінбедім. Басқаша тұжырымдап көріңіз."; // Әдепкі жауап
 
-        function simulateTransfer() {
-            const amount = parseInt(document.getElementById('transferAmount').value);
-            let balance = parseInt(document.getElementById('balance').textContent);
-            const statusP = document.getElementById('transferStatus');
+            // Нақты API шақыруының орнына қарапайым логика
+            // Шынайы жүйеде бұл жерде fetch() арқылы API-ға сұраныс жіберіледі
+            // fetch('/api/ai-financial-advisor', { method: 'POST', body: JSON.stringify({query: userInput}) })
+            //   .then(response => response.json())
+            //   .then(data => { responseElement.textContent = data.answer; })
+            //   .catch(error => { responseElement.textContent = 'API қатесі: ' + error; });
 
-            if (amount > 0 && amount <= balance) {
-                balance -= amount;
-                document.getElementById('balance').textContent = balance;
-                statusP.textContent = amount + " KZT сәтті аударылды. Жаңа баланс: " + balance + " KZT.";
-                statusP.style.color = "green";
-            } else if (amount > balance) {
-                statusP.textContent = "Баланста қаражат жеткіліксіз.";
-                statusP.style.color = "red";
-            } else {
-                statusP.textContent = "Аударым сомасы дұрыс емес.";
-                statusP.style.color = "red";
+            if (userInput.includes("депозит") || userInput.includes("салым")) {
+                aiTextResponse = "Депозит ашу үшін банк бөлімшесіне хабарласуыңызға немесе банктің мобильді қосымшасын пайдалануыңызға болады. \nНегізгі түрлері: мерзімді депозит (жоғары пайызбен, белгілі бір мерзімге) және талап етілгенге дейінгі депозит (кез келген уақытта алуға болады, пайыз төменірек). \nНақты шарттарды таңдалған банктен біліңіз.";
+            } else if (userInput.includes("несие") || userInput.includes("кредит")) {
+                aiTextResponse = "Несие алу үшін банктің талаптарына сай болуыңыз керек (жас мөлшері, тұрақты табыс, несие тарихы). \nНесие түрлері көп: тұтынушылық несие, ипотека, автонесие. \nӘр несиенің өз пайыздық мөлшерлемесі мен шарттары болады. Банк сайтындағы несие калькуляторын пайдаланып көріңіз.";
+            } else if (userInput.includes("инвестиция") || userInput.includes("акция") || userInput.includes("облигация")) {
+                aiTextResponse = "Инвестицияны бастамас бұрын, тәуекелдерді түсіну маңызды. \nҚарапайым жолдардың бірі – инвестициялық қорлар арқылы немесе брокерлік шот ашып, акциялар мен облигациялар сатып алу. \nБастапқыда аз сомадан бастап, біліміңізді арттырған жөн. Қаржылық кеңесшімен ақылдасуды ұсынамыз.";
+            } else if (userInput.includes("карта") || userInput.includes("картаны бұғаттау") || userInput.includes("картаны жоғалттым")) {
+                aiTextResponse = "Банк картаңызды жоғалтсаңыз немесе ұрлатсаңыз, дереу банкке хабарласып, оны бұғаттаңыз. \nМұны банктің мобильді қосымшасы арқылы немесе call-орталыққа қоңырау шалу арқылы жасауға болады. \nЖаңа картаға тапсырыс беруді ұмытпаңыз.";
+            } else if (userInput.includes("сәлем") || userInput.includes("қалайсың")) {
+                aiTextResponse = "Сәлеметсіз бе! Мен сізге қаржылық сұрақтар бойынша көмектесуге дайын виртуалды көмекшімін.";
             }
+
+            responseElement.textContent = aiTextResponse;
         }
     </script>
+
 </body>
 </html>
