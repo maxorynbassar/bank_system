@@ -10,27 +10,26 @@
         .container { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 8px; }
         .content-section h2 { color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; }
         .content-section ul { list-style-type: circle; margin-left: 20px; }
-        .ai-demo {
+        .ai-demo, .blockchain-demo {
             background-color: #eef7ff; /* Светло-голубой фон */
             padding: 20px;
             border-radius: 8px;
             margin-top: 25px;
             border: 1px solid #b8d6f3;
         }
-        .ai-demo h3 {
+        .ai-demo h3, .blockchain-demo h3 {
             margin-top: 0;
             color: #0056b3;
         }
-        .ai-demo textarea {
+        .ai-demo textarea, .blockchain-demo input[type="text"], .blockchain-demo input[type="number"] {
             width: calc(100% - 22px);
             padding: 10px;
-            min-height: 80px;
             border-radius: 4px;
             border: 1px solid #ced4da;
             margin-bottom: 10px;
             font-family: sans-serif;
         }
-        .ai-demo button {
+        .ai-demo button, .blockchain-demo button {
             padding: 10px 15px;
             background-color: #007bff;
             color: white;
@@ -38,7 +37,7 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        .ai-demo button:hover {
+        .ai-demo button:hover, .blockchain-demo button:hover {
             background-color: #0056b3;
         }
         #aiResponse {
@@ -50,18 +49,39 @@
             min-height: 50px;
             white-space: pre-wrap; /* Для сохранения переносов строк в ответе */
         }
+        /* Стили для блокчейн демо */
+        #blockchainDisplay {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        .block {
+            border: 1px solid #007bff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .block p { margin: 5px 0; }
+        .block-header { font-weight: bold; color: #0056b3; }
+        .block-data { font-family: monospace; font-size: 0.9em; word-break: break-all; }
+        .form-group { margin-bottom: 10px; }
+        .form-group label { display: block; margin-bottom: 3px; font-weight: 500; }
+
         /* Навигация (если будешь копировать свою) */
         header nav ul { list-style: none; padding: 0; display: flex; background-color: #333; }
         header nav ul li { margin-right: 10px; }
         header nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
         header nav ul li a:hover { background-color: #555; }
     </style>
+    <!-- Подключаем библиотеку для SHA256 (можно скачать и положить локально или использовать CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
 <body>
 
     <header>
         <!-- СКОПИРУЙ СЮДА СВОЮ НАВИГАЦИОННУЮ ПАНЕЛЬ (ШАПКУ САЙТА) -->
-        <!-- Обнови ее, чтобы включить эту страницу и другие -->
         <nav>
             <ul>
                 <li><a href="index.html">Басты бет</a></li>
@@ -82,6 +102,7 @@
 
         <div class="content-section">
             <h2>Жасанды интеллект (AI) банк саласында</h2>
+            <!-- ... (существующий контент про AI) ... -->
             <p>Жасанды интеллект банктерге клиенттерге қызмет көрсету сапасын жақсартуға, операциялық тиімділікті арттыруға және тәуекелдерді басқаруға көмектеседі. AI қолданудың негізгі бағыттары:</p>
             <ul>
                 <li><strong>Клиенттерге қызмет көрсету:</strong> Чат-боттар мен виртуалды көмекшілер арқылы клиенттердің сұраныстарына жедел жауап беру.</li>
@@ -94,6 +115,7 @@
 
         <div class="ai-demo">
             <h3>AI Қаржылық Көмекшісі (Демо)</h3>
+            <!-- ... (существующий HTML для AI демо) ... -->
             <p>Төмендегі өріске қаржыға немесе банк қызметтеріне қатысты сұрағыңызды жазып, AI-дан кеңес алыңыз (бұл имитация). Мысалы: "депозит ашу", "несие шарттары", "инвестиция қалай бастау керек".</p>
             <textarea id="userInputAI" placeholder="Сұрағыңызды осында жазыңыз..."></textarea>
             <button onclick="getAIResponse()">AI-дан жауап алу</button>
@@ -113,21 +135,40 @@
                 <li><strong>Бағалы қағаздармен операциялар:</strong> Бағалы қағаздарды шығару және сату процестерін жеңілдету.</li>
             </ul>
         </div>
-        <p><em>AI және блокчейн технологиялары банк секторын трансформациялауда маңызды рөл атқарады, бірақ оларды енгізу мұқият жоспарлауды және ықтимал тәуекелдерді ескеруді қажет етеді.</em></p>
+
+        <div class="blockchain-demo">
+            <h3>Қарапайым Блокчейн Демонстрациясы</h3>
+            <p>Бұл демонстрация блокчейннің негізгі қағидаттарын көрсетеді: блоктардың тізбектелуі және деректердің өзгермейтіндігі (хештеу арқылы).</p>
+            <div class="form-group">
+                <label for="sender">Жіберуші:</label>
+                <input type="text" id="sender" placeholder="Мысалы, Айгүл">
+            </div>
+            <div class="form-group">
+                <label for="recipient">Алушы:</label>
+                <input type="text" id="recipient" placeholder="Мысалы, Марат">
+            </div>
+            <div class="form-group">
+                <label for="amount">Сома (KZT):</label>
+                <input type="number" id="amount" placeholder="Мысалы, 5000">
+            </div>
+            <button onclick="addTransactionToBlock()">Транзакцияны блокқа қосу</button>
+
+            <div id="blockchainDisplay">
+                <h4>Блоктар тізбегі:</h4>
+                <!-- Блоктар осында көрсетіледі -->
+            </div>
+        </div>
+
+
+        <p style="margin-top:20px;"><em>AI және блокчейн технологиялары банк секторын трансформациялауда маңызды рөл атқарады, бірақ оларды енгізу мұқият жоспарлауды және ықтимал тәуекелдерді ескеруді қажет етеді.</em></p>
     </div>
 
     <script>
+        // --- AI Демо Коды ---
         function getAIResponse() {
             const userInput = document.getElementById('userInputAI').value.toLowerCase().trim();
             const responseElement = document.getElementById('aiResponse');
             let aiTextResponse = "Кешіріңіз, сұранысыңызды түсінбедім. Басқаша тұжырымдап көріңіз."; // Әдепкі жауап
-
-            // Нақты API шақыруының орнына қарапайым логика
-            // Шынайы жүйеде бұл жерде fetch() арқылы API-ға сұраныс жіберіледі
-            // fetch('/api/ai-financial-advisor', { method: 'POST', body: JSON.stringify({query: userInput}) })
-            //   .then(response => response.json())
-            //   .then(data => { responseElement.textContent = data.answer; })
-            //   .catch(error => { responseElement.textContent = 'API қатесі: ' + error; });
 
             if (userInput.includes("депозит") || userInput.includes("салым")) {
                 aiTextResponse = "Депозит ашу үшін банк бөлімшесіне хабарласуыңызға немесе банктің мобильді қосымшасын пайдалануыңызға болады. \nНегізгі түрлері: мерзімді депозит (жоғары пайызбен, белгілі бір мерзімге) және талап етілгенге дейінгі депозит (кез келген уақытта алуға болады, пайыз төменірек). \nНақты шарттарды таңдалған банктен біліңіз.";
@@ -140,8 +181,152 @@
             } else if (userInput.includes("сәлем") || userInput.includes("қалайсың")) {
                 aiTextResponse = "Сәлеметсіз бе! Мен сізге қаржылық сұрақтар бойынша көмектесуге дайын виртуалды көмекшімін.";
             }
-
             responseElement.textContent = aiTextResponse;
+        }
+
+        // --- Блокчейн Демо Коды ---
+        class Block {
+            constructor(index, timestamp, data, previousHash = '') {
+                this.index = index;
+                this.timestamp = timestamp;
+                this.data = data; // Объект транзакции
+                this.previousHash = previousHash;
+                this.hash = this.calculateHash();
+                this.nonce = 0; // Для Proof-of-Work (упрощено)
+            }
+
+            calculateHash() {
+                // Используем sha256 из подключенной библиотеки
+                return sha256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
+            }
+
+            // Упрощенный "майнинг" для демонстрации
+            mineBlock(difficulty) {
+                while (this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")) {
+                    this.nonce++;
+                    this.hash = this.calculateHash();
+                }
+                // console.log("BLOCK MINED: " + this.hash); // Для отладки
+            }
+        }
+
+        class Blockchain {
+            constructor() {
+                this.chain = [this.createGenesisBlock()];
+                this.difficulty = 2; // Количество нулей в начале хеша (упрощенный PoW)
+                this.pendingTransactions = []; // Транзакции, ожидающие добавления в блок
+            }
+
+            createGenesisBlock() {
+                return new Block(0, new Date().toISOString(), { transaction: "Genesis Block - Бастапқы блок" }, "0");
+            }
+
+            getLatestBlock() {
+                return this.chain[this.chain.length - 1];
+            }
+
+            addTransaction(transaction) {
+                this.pendingTransactions.push(transaction);
+            }
+            
+            minePendingTransactionsAndAddBlock() {
+                if (this.pendingTransactions.length === 0) {
+                    // console.log("No transactions to mine.");
+                    // Можно добавить пустой блок, если нужно, или просто ничего не делать
+                    // Для демо лучше добавить блок с сообщением, если нет транзакций
+                    const newBlock = new Block(this.chain.length, new Date().toISOString(), { transaction: "Транзакциялар жоқ, бос блок" }, this.getLatestBlock().hash);
+                    newBlock.mineBlock(this.difficulty);
+                    this.chain.push(newBlock);
+                    return newBlock; // Возвращаем созданный блок
+                }
+
+                // В реальном блокчейне здесь была бы более сложная логика выбора транзакций
+                // Для демо мы просто берем все ожидающие транзакции
+                const blockData = { transactions: [...this.pendingTransactions] };
+                const newBlock = new Block(this.chain.length, new Date().toISOString(), blockData, this.getLatestBlock().hash);
+                newBlock.mineBlock(this.difficulty); // Имитация "майнинга"
+                this.chain.push(newBlock);
+
+                this.pendingTransactions = []; // Очищаем ожидающие транзакции
+                return newBlock; // Возвращаем созданный блок
+            }
+
+
+            isChainValid() {
+                for (let i = 1; i < this.chain.length; i++) {
+                    const currentBlock = this.chain[i];
+                    const previousBlock = this.chain[i - 1];
+
+                    if (currentBlock.hash !== currentBlock.calculateHash()) {
+                        return false;
+                    }
+                    if (currentBlock.previousHash !== previousBlock.hash) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        // Инициализация блокчейна
+        const demoCoin = new Blockchain();
+        displayBlockchain(); // Отображаем генезис-блок при загрузке
+
+        function addTransactionToBlock() {
+            const sender = document.getElementById('sender').value;
+            const recipient = document.getElementById('recipient').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (!sender || !recipient || isNaN(amount) || amount <= 0) {
+                alert("Барлық өрістерді дұрыс толтырыңыз!");
+                return;
+            }
+
+            const transaction = { sender, recipient, amount };
+            demoCoin.addTransaction(transaction);
+            // Для демо, майним сразу после добавления транзакции (в реальности это отдельный процесс)
+            const newBlock = demoCoin.minePendingTransactionsAndAddBlock(); 
+            displayBlockchain();
+
+            // Очищаем поля
+            document.getElementById('sender').value = '';
+            document.getElementById('recipient').value = '';
+            document.getElementById('amount').value = '';
+        }
+
+        function displayBlockchain() {
+            const blockchainDisplay = document.getElementById('blockchainDisplay');
+            // Очищаем предыдущее отображение, кроме заголовка
+            while (blockchainDisplay.children.length > 1) {
+                 blockchainDisplay.removeChild(blockchainDisplay.lastChild);
+            }
+            
+            demoCoin.chain.forEach(block => {
+                const blockDiv = document.createElement('div');
+                blockDiv.classList.add('block');
+
+                let dataHtml = '';
+                if (block.data.transaction) { // Для генезис-блока или пустого блока
+                     dataHtml = `<p><strong>Деректер:</strong> ${block.data.transaction}</p>`;
+                } else if (block.data.transactions && block.data.transactions.length > 0) {
+                    dataHtml = '<p><strong>Транзакциялар:</strong></p><ul>';
+                    block.data.transactions.forEach(tx => {
+                        dataHtml += `<li>Жіберуші: ${tx.sender}, Алушы: ${tx.recipient}, Сома: ${tx.amount} KZT</li>`;
+                    });
+                    dataHtml += '</ul>';
+                }
+
+
+                blockDiv.innerHTML = `
+                    <p class="block-header">Блок #${block.index}</p>
+                    <p><strong>Уақыт белгісі:</strong> ${block.timestamp}</p>
+                    ${dataHtml}
+                    <p class="block-data"><strong>Алдыңғы блоктың хеші:</strong> ${block.previousHash}</p>
+                    <p class="block-data"><strong>Осы блоктың хеші:</strong> ${block.hash}</p>
+                    <p><strong>Nonce:</strong> ${block.nonce}</p>
+                `;
+                blockchainDisplay.appendChild(blockDiv);
+            });
         }
     </script>
 
