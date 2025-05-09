@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифрлық теңге - Банк Жүйесі</title>
+    <link rel="stylesheet" href="style.css"> <!-- Твой основной файл стилей -->
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .content-section {
+            margin-bottom: 20px;
+        }
+        .content-section h2 {
+            color: #0056b3; /* Фирменный синий */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        .content-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .interactive-element {
+            background-color: #f0f8ff; /* Светло-голубой фон */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .interactive-element button {
+            padding: 8px 12px;
+            background-color: #28a745; /* Зеленый */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .interactive-element button:hover {
+            background-color: #218838;
+        }
+        .hidden-info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        /* Навигация (если будешь копировать свою) */
+        header nav ul { list-style: none; padding: 0; display: flex; background-color: #333; }
+        header nav ul li { margin-right: 10px; }
+        header nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
+        header nav ul li a:hover { background-color: #555; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- СКОПИРУЙ СЮДА СВОЮ НАВИГАЦИОННУЮ ПАНЕЛЬ (ШАПКУ САЙТА) -->
+        <!-- Пример простой навигации: -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="open-api.html">Open API</a></li>
+                <li><a href="ai-blockchain.html">AI & Blockchain</a></li>
+                <li><a href="digital-tenge.html" style="background-color: #555;">Цифрлық теңге</a></li>
+                <li><a href="cybersecurity.html">Киберқауіпсіздік</a></li>
+                <li><a href="demo-banking.html">Онлайн-Банкинг Демо</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Цифрлық теңге</h1>
+
+        <div class="content-section">
+            <h2>Цифрлық теңге деген не?</h2>
+            <p>Цифрлық теңге – бұл Қазақстан Ұлттық Банкі шығаратын ұлттық валютаның үшінші формасы (қолма-қол және қолма-қол ақшасыз ақшамен қатар). Ол блокчейн технологияларына негізделуі мүмкін және дәстүрлі ақшаның барлық функцияларын орындайды: айырбас құралы, құн өлшемі және қор жинау құралы.</p>
+            <p>Негізгі мақсаты – төлем жүйелерінің тиімділігін арттыру, инновацияларды ынталандыру және қаржылық қамтуды кеңейту.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Негізгі артықшылықтары</h2>
+            <ul>
+                <li>Төлемдердің жылдамдығы мен төмен құны.</li>
+                <li>Смарт-контракттарды қолдану мүмкіндігі.</li>
+                <li>Офлайн төлемдер жасау потенциалы.</li>
+                <li>Транзакциялардың жоғары қауіпсіздігі мен ашықтығы (белгілі бір дәрежеде).</li>
+                <li>Қаржылық инклюзияны арттыру (банк қызметтеріне қол жетімділігі жоқ азаматтар үшін).</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Қолдану сценарийлері (мысалдар)</h2>
+            <div class="interactive-element">
+                <p>Цифрлық теңгені қалай қолдануға болады?</p>
+                <button onclick="showScenario('p2p')">Жеке тұлғалар арасындағы аударымдар</button>
+                <div id="p2p" class="hidden-info">
+                    Досыңызға немесе туысыңызға комиссиясыз немесе өте төмен комиссиямен лезде ақша аудару.
+                </div>
+                <button onclick="showScenario('retail')">Тауарлар мен қызметтер үшін төлем</button>
+                <div id="retail" class="hidden-info">
+                    Дүкендерде, интернет-дүкендерде немесе қызмет көрсету орындарында цифрлық теңгемен оңай төлеу.
+                </div>
+                <button onclick="showScenario('smart')">Смарт-контракттар</button>
+                <div id="smart" class="hidden-info">
+                    Белгілі бір шарттар орындалғанда автоматты түрде орындалатын келісімшарттар (мысалы, тауар жеткізілгенде төлем жасау).
+                </div>
+            </div>
+        </div>
+
+         <div class="content-section">
+            <h2>Ағымдағы жағдай және перспективалар</h2>
+            <p>Қазақстан Ұлттық Банкі цифрлық теңге платформасын белсенді түрде сынақтан өткізуде. Пилоттық жобалар әртүрлі сценарийлерді, соның ішінде офлайн төлемдерді, смарт-контракттарды және трансшекаралық аударымдарды қамтиды. Болашақта цифрлық теңге елдің қаржы жүйесінің маңызды бөлігіне айналуы мүмкін.</p>
+        </div>
+    </div>
+
+    <script>
+        function showScenario(scenarioId) {
+            // Сначала скрыть все другие описания
+            const allInfos = document.querySelectorAll('.hidden-info');
+            allInfos.forEach(info => {
+                if (info.id !== scenarioId) {
+                    info.style.display = 'none';
+                }
+            });
+            // Показать/скрыть выбранное описание
+            const scenarioInfo = document.getElementById(scenarioId);
+            if (scenarioInfo) {
+                scenarioInfo.style.display = scenarioInfo.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
